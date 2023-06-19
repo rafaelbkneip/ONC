@@ -8,6 +8,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 import selenium.webdriver.support.expected_conditions as EC
 from time import sleep
 
+ouro = []
+prata = []
+bronze = []
+
 import brazilian_states
 
 options = Options()
@@ -42,13 +46,42 @@ while(controle_cidade):
                 navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/table/tbody/tr['+ str(cont_escola) +']/td[1]/a').click()
                 cont_escola = cont_escola + 1
 
-                try: 
-                    resultado = navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div/div/h3').text
-                    print(resultado)
+                cont_ouro = 1
+                cont_prata = 1
+                cont_bronze = 1
 
-                except:
-                    print("Error")
+                controle_ouro = True
 
+                while(controle_ouro):
+                    try: 
+                        ouro.append(navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div[1]/div/table/tbody/tr/td[' + str(cont_ouro) +']').text)
+                        ouro.append(navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div[1]/div/table/tbody/tr/td[' + str(cont_ouro+1) +']').text)
+                        cont_ouro = cont_ouro + 1
+                        
+                    except:
+                        print("Nenhuma medalha")
+                        controle_ouro = False
+
+                print(ouro)
+
+                # try: 
+                #     prata.append(navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div[2]/div/table/tbody/tr/td[' + str(cont_prata) +']').text)
+                #     prata.append(navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div[2]/div/table/tbody/tr/td[' + str(cont_prata+1) +']').text)
+                #     cont_prata = cont_prata + 1
+                    
+                # except:
+                #     #pass
+                #     print("Sem medalha :(")
+
+                # try: 
+                #     bronze.append(navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[' + str(cont_bronze) +']').text)
+                #     bronze.append(navegador.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[' + str(cont_bronze+1) +']').text)
+                #     cont_bronze = cont_bronze + 1
+                    
+                # except:
+                #     #pass
+                #     print("Sem medalha :(")
+                    
                 navegador.back()
 
             except:
@@ -65,4 +98,3 @@ while(controle_cidade):
 
 #Voltar a página anterior / Go back to the previous page
 #navegador.back()
-
