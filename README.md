@@ -1,4 +1,4 @@
-# cheat-sheet
+# ONC
 
 ![bandeira dos estados unidos (2)](https://github.com/rafaelbkneip/cheat-sheet/assets/69248454/18a1e69e-cb09-49d1-b434-a0d96bd3bd14)
 Web scraping application to get all the medalists from the National Science Olympics
