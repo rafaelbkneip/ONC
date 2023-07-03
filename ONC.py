@@ -11,8 +11,8 @@ import brazilian_states
 import save
 
 #Brazilians states / Estados brasileiros
-for i in range (27):
-    print(brazilian_states.brazilian_states(i))
+# for i in range (27):
+#     print(brazilian_states.brazilian_states(i))
 
 options = Options()
 options.add_experimental_option("detach", True)
