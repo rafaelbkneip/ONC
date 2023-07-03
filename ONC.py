@@ -11,7 +11,7 @@ import brazilian_states
 import save
 
 #Brazilians states / Estados brasileiros
-for i in range (4, 27):
+for i in range (27):
     print(brazilian_states.brazilian_states(i))
 
 options = Options()
@@ -21,7 +21,7 @@ options.add_experimental_option("excludeSwitches", ['enable-automation'])
 
 navegador = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-for i in range (4, 27):
+for i in range (27):
 
     unica = []
     ouro = []
